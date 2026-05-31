@@ -1,0 +1,1306 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026 FIFA世界杯 · 美加墨盛宴</title>
+<meta name="description" content="2026年美加墨世界杯官方网站，赛事资讯、球队介绍、赛程赛果、精彩视频一网打尽">
+<meta name="keywords" content="2026世界杯, FIFA, 美加墨, 足球, 赛程, 球队, 梅西, C罗">
+<style>
+:root {
+  --green: #0b7a3e;
+  --green-dark: #064e2a;
+  --green-light: #16a34a;
+  --gold: #c9a227;
+  --gold-light: #f0d878;
+  --bg: #f0f4f0;
+  --text: #1a1a1a;
+  --text-muted: #666;
+  --white: #fff;
+  --radius: 14px;
+  --shadow: 0 8px 30px rgba(0,0,0,0.1);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; display: block; }
+
+/* PC导航 */
+.pc-nav {
+  background: linear-gradient(90deg, var(--green-dark), var(--green));
+  padding: 0 40px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+.pc-nav-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+}
+.pc-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--white);
+}
+.pc-logo .ball {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid rgba(255,255,255,0.3);
+}
+.pc-logo .ball img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+}
+.pc-logo h1 { font-size: 22px; letter-spacing: 1px; }
+.pc-logo span { font-size: 12px; opacity: 0.8; }
+.pc-menu { display: flex; gap: 35px; }
+.pc-menu a {
+  color: var(--white); font-size: 15px; font-weight: 500;
+  position: relative; padding: 5px 0;
+}
+.pc-menu a::after {
+  content: ''; position: absolute; bottom: 0; left: 0;
+  width: 0; height: 2px; background: var(--gold);
+  transition: width 0.3s;
+}
+.pc-menu a:hover::after { width: 100%; }
+
+/* PC英雄区块 */
+.pc-hero {
+  background: url('./img/4.jpg') center/cover no-repeat;
+  padding: 100px 40px 80px;
+  position: relative;
+  overflow: hidden;
+}
+.pc-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(6,78,42,0.82) 0%, rgba(11,122,62,0.75) 50%, rgba(22,163,74,0.68) 100%);
+  z-index: 1;
+}
+.pc-hero-inner {
+  max-width: 1400px; margin: 0 auto;
+  display: grid; grid-template-columns: 1.2fr 1fr;
+  gap: 60px; align-items: center;
+  position: relative;
+  z-index: 2;
+}
+.pc-hero-content h2 {
+  font-size: 52px; color: var(--white); line-height: 1.2;
+  margin-bottom: 20px;
+}
+.pc-hero-content h2 span {
+  color: var(--gold-light);
+  text-shadow: 0 0 20px rgba(201,162,39,0.4);
+}
+.pc-hero-content p {
+  font-size: 18px; color: rgba(255,255,255,0.85);
+  margin-bottom: 30px; max-width: 500px;
+}
+.pc-countdown {
+  display: flex; gap: 20px; margin-bottom: 35px;
+}
+.cd-box {
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 12px; padding: 18px 24px;
+  text-align: center; min-width: 90px;
+}
+.cd-num {
+  font-size: 36px; font-weight: 800; color: var(--gold-light);
+  font-family: 'Courier New', monospace;
+}
+.cd-label { font-size: 12px; color: rgba(255,255,255,0.7); margin-top: 4px; }
+.pc-hero-btns { display: flex; gap: 15px; }
+.pc-btn-main {
+  background: linear-gradient(135deg, var(--gold), #e8b923);
+  color: var(--green-dark); padding: 14px 32px;
+  border-radius: 8px; font-weight: 700; font-size: 16px;
+  box-shadow: 0 4px 20px rgba(201,162,39,0.4);
+  transition: all 0.3s;
+}
+.pc-btn-main:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(201,162,39,0.5); }
+.pc-btn-sec {
+  background: rgba(255,255,255,0.15); color: var(--white);
+  padding: 14px 32px; border-radius: 8px; font-weight: 600;
+  border: 1px solid rgba(255,255,255,0.25);
+  transition: all 0.3s;
+}
+.pc-btn-sec:hover { background: rgba(255,255,255,0.25); }
+
+/* PC公告栏 */
+.pc-marquee {
+  background: var(--white); padding: 15px 40px;
+  border-bottom: 1px solid #e0e0e0;
+}
+.pc-marquee-inner {
+  max-width: 1400px; margin: 0 auto;
+  display: flex; align-items: center; gap: 15px;
+}
+.marquee-label {
+  background: var(--green); color: var(--white);
+  padding: 5px 14px; border-radius: 4px;
+  font-size: 13px; font-weight: 600; flex-shrink: 0;
+}
+.marquee-text {
+  flex: 1; overflow: hidden; white-space: nowrap;
+}
+.marquee-text span {
+  display: inline-block;
+  padding-left: 100%;
+  animation: marqueeScroll 20s linear infinite;
+  font-size: 20px; color: var(--text-muted);
+  font-weight: 700;
+}
+@keyframes marqueeScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+/* PC区块通用 */
+.pc-section { padding: 70px 40px; max-width: 1400px; margin: 0 auto; }
+.pc-section-title {
+  font-size: 32px; color: var(--green-dark); margin-bottom: 10px;
+  display: flex; align-items: center; gap: 12px;
+}
+.pc-section-title::before {
+  content: ''; width: 5px; height: 32px;
+  background: linear-gradient(180deg, var(--gold), var(--green));
+  border-radius: 3px;
+}
+.pc-section-sub { color: var(--text); margin-bottom: 40px; font-size: 16px; font-weight: 700; }
+
+/* PC历史区块 */
+.pc-history {
+  background: var(--white); border-radius: var(--radius);
+  padding: 40px; box-shadow: var(--shadow);
+}
+.history-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px;
+}
+.history-card {
+  background: var(--bg); border-radius: 10px; padding: 25px;
+  text-align: center; border: 1px solid #e8e8e8;
+  transition: all 0.3s; overflow: hidden;
+}
+.history-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
+.history-img {
+  width: 100%; height: 120px; object-fit: cover;
+  border-radius: 8px; margin-bottom: 15px;
+}
+.history-year {
+  font-size: 14px; color: var(--green); font-weight: 700; margin-bottom: 8px;
+}
+.history-host { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 5px; }
+.history-winner { font-size: 20px; margin-bottom: 5px; }
+.history-name { font-size: 13px; color: var(--text-muted); }
+
+/* PC32强球队 */
+.team-section {
+  background: url('./img/2.jpg') center/cover no-repeat;
+  position: relative;
+}
+.team-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(240,244,240,0.7);
+  z-index: 1;
+}
+.team-section .pc-section,
+.team-section .pc-section-title,
+.team-section .pc-section-sub {
+  position: relative;
+  z-index: 2;
+}
+.team-grid {
+  display: grid; grid-template-columns: repeat(8, 1fr); gap: 15px;
+  position: relative;
+  z-index: 2;
+}
+.team-card {
+  background: var(--white); border-radius: 10px;
+  padding: 18px 8px; text-align: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  border: 1px solid #eee; transition: all 0.3s;
+}
+.team-card:hover { transform: scale(1.05); border-color: var(--green); }
+.team-flag { font-size: 36px; margin-bottom: 8px; }
+.team-name { font-size: 13px; font-weight: 600; color: var(--text); }
+
+/* PC赛程表 */
+.schedule-wrap {
+  background: var(--white); border-radius: var(--radius);
+  padding: 35px; box-shadow: var(--shadow);
+}
+.schedule-tabs {
+  display: flex; gap: 10px; margin-bottom: 25px; flex-wrap: wrap;
+}
+.s-tab {
+  padding: 8px 20px; border-radius: 20px;
+  background: var(--bg); font-size: 14px; font-weight: 500;
+  cursor: pointer; border: none; color: var(--text);
+  transition: all 0.2s;
+}
+.s-tab:hover { background: #e0e8e0; }
+.s-tab.active { background: var(--green); color: var(--white); }
+.schedule-list { display: flex; flex-direction: column; gap: 12px; }
+.s-item {
+  display: flex; align-items: center; gap: 20px;
+  padding: 18px 20px; background: var(--bg);
+  border-radius: 10px; transition: all 0.2s;
+}
+.s-item:hover { background: #e8f0e8; }
+.s-time { font-size: 14px; color: var(--green); font-weight: 700; width: 65px; flex-shrink: 0; }
+.s-match { flex: 1; display: flex; align-items: center; justify-content: flex-start; gap: 15px; }
+.s-team { flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px; font-weight: 600; }
+.s-flag { font-size: 28px; }
+.s-vs { color: var(--text-muted); font-size: 13px; background: var(--white); padding: 4px 12px; border-radius: 20px; }
+.s-stage { font-size: 13px; color: var(--text-muted); width: 120px; text-align: right; }
+
+/* PC精彩瞬间 */
+.gallery-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px;
+}
+.gallery-item {
+  border-radius: 12px; overflow: hidden; position: relative;
+  aspect-ratio: 16/10; background: #ddd;
+}
+.gallery-item .g-img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 0.5s;
+}
+.gallery-item:hover .g-img { transform: scale(1.08); }
+.gallery-overlay {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  background: linear-gradient(transparent, rgba(0,0,0,0.75));
+  padding: 50px 15px 15px; color: var(--white);
+}
+.gallery-overlay h4 { font-size: 15px; margin-bottom: 4px; }
+.gallery-overlay p { font-size: 12px; opacity: 0.85; }
+
+/* PC射手榜 */
+.rank-table { width: 100%; border-collapse: collapse; }
+.rank-table th, .rank-table td { padding: 14px 16px; text-align: left; border-bottom: 1px solid #eee; }
+.rank-table th { background: var(--bg); font-size: 13px; color: var(--text-muted); font-weight: 600; }
+.rank-table tr:hover { background: #f8faf8; }
+.rank-num {
+  width: 30px; height: 30px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 13px;
+}
+.rank-num.gold { background: linear-gradient(135deg, #ffd700, #ffb800); color: #333; }
+.rank-num.silver { background: linear-gradient(135deg, #c0c0c0, #a0a0a0); color: #333; }
+.rank-num.bronze { background: linear-gradient(135deg, #cd7f32, #b87333); color: #fff; }
+.rank-num.normal { background: var(--bg); color: var(--text-muted); }
+
+/* 历史回顾 & 射手榜背景同步 */
+#history {
+  background: url('./img/1.jpg') center/cover no-repeat;
+  position: relative;
+}
+#history::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(240,244,240,0.7);
+  z-index: 1;
+}
+#history > .pc-section {
+  position: relative;
+  z-index: 2;
+}
+
+#rank {
+  background: url('./img/2.jpg') center/cover no-repeat;
+  position: relative;
+}
+#rank::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(240,244,240,0.7);
+  z-index: 1;
+}
+#rank > .pc-section {
+  position: relative;
+  z-index: 2;
+}
+
+/* 弹窗 */
+.modal-overlay {
+  display: none;
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 200;
+  justify-content: center;
+  align-items: center;
+}
+.modal-overlay.active { display: flex; }
+.modal-box {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 35px 40px;
+  max-width: 420px; width: 90%;
+  box-shadow: var(--shadow);
+  text-align: center;
+  animation: modalIn 0.3s ease;
+}
+@keyframes modalIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.modal-box h3 {
+  font-size: 22px; color: var(--green-dark);
+  margin-bottom: 8px;
+}
+.modal-box p {
+  color: var(--text-muted); font-size: 14px;
+  margin-bottom: 25px;
+}
+.modal-btns {
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+.modal-btns a {
+  display: block;
+  background: linear-gradient(135deg, var(--green-dark), var(--green));
+  color: var(--white);
+  padding: 12px 0;
+  border-radius: 8px;
+  font-size: 14px; font-weight: 600;
+  transition: all 0.3s;
+}
+.modal-btns a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(11,122,62,0.4);
+}
+.modal-close {
+  margin-top: 18px;
+  background: none; border: none;
+  color: var(--text-muted);
+  font-size: 13px; cursor: pointer;
+}
+.modal-close:hover { color: var(--green-dark); }
+
+/* ===== 公告弹窗 ===== */
+.notice-overlay {
+  display: none;
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.55);
+  z-index: 300;
+  justify-content: center;
+  align-items: center;
+}
+.notice-overlay.active { display: flex; }
+.notice-box {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 30px 35px 35px;
+  max-width: 400px; width: 90%;
+  box-shadow: var(--shadow);
+  text-align: center;
+  animation: modalIn 0.3s ease;
+  position: relative;
+}
+.notice-box h3 {
+  font-size: 20px; color: var(--green-dark);
+  margin-bottom: 6px;
+}
+.notice-box > p {
+  color: var(--text-muted); font-size: 13px;
+  margin-bottom: 22px;
+}
+.notice-close {
+  position: absolute; top: 14px; right: 18px;
+  font-size: 22px; color: #bbb; cursor: pointer;
+  line-height: 1;
+}
+.notice-close:hover { color: var(--green-dark); }
+.notice-contact-list {
+  display: flex; flex-direction: column; gap: 10px;
+}
+.notice-contact-item {
+  display: flex; align-items: center; gap: 12px;
+  padding: 12px 16px;
+  background: var(--bg);
+  border-radius: 10px;
+  text-align: left;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+.notice-contact-item:hover {
+  background: #e0ece0;
+  transform: translateX(3px);
+}
+.notice-icon {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--green-dark), var(--green));
+  color: var(--white);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px; flex-shrink: 0;
+}
+.notice-info { flex: 1; }
+.notice-info .label { font-size: 12px; color: var(--text-muted); }
+.notice-info .value { font-size: 15px; font-weight: 600; color: var(--text); }
+
+/* ===== 右侧漂浮按钮 ===== */
+.float-btns {
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 150;
+}
+.float-btn {
+  width: 64px; height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--green-dark), var(--green));
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(11,122,62,0.4);
+  transition: all 0.3s;
+  text-decoration: none;
+}
+.float-btn:hover {
+  transform: scale(1.12);
+  box-shadow: 0 8px 28px rgba(11,122,62,0.6);
+}
+.float-tooltip {
+  position: absolute;
+  right: 76px;
+  background: var(--text);
+  color: var(--white);
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 14px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+}
+.float-btn:hover .float-tooltip { opacity: 1; }
+.float-btn.gold {
+  background: linear-gradient(135deg, var(--gold), #e8b923);
+  color: var(--green-dark);
+}
+.float-btn.gold:hover {
+  box-shadow: 0 6px 20px rgba(201,162,39,0.5);
+}
+.float-btn.blue {
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+}
+.float-btn.blue:hover {
+  box-shadow: 0 6px 20px rgba(37,99,235,0.5);
+}
+.float-tooltip {
+  position: absolute;
+  right: 60px;
+  background: var(--text);
+  color: var(--white);
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+}
+.float-btn:hover .float-tooltip { opacity: 1; }
+
+/* ===== 赛程下方联系方式 ===== */
+.contact-section {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 40px;
+  box-shadow: var(--shadow);
+  max-width: 800px;
+  margin: 0 auto 40px;
+}
+.contact-section-title {
+  font-size: 24px; color: var(--green-dark);
+  margin-bottom: 8px;
+  text-align: center;
+}
+.contact-section-sub {
+  color: var(--text-muted); font-size: 14px;
+  text-align: center; margin-bottom: 30px;
+}
+.contact-grid {
+  display: grid;
+  grid-template-columns: minmax(200px, 320px);
+  justify-content: center;
+  gap: 20px;
+}
+.contact-card {
+  background: var(--bg);
+  border-radius: 12px;
+  padding: 25px 15px;
+  text-align: center;
+  transition: all 0.3s;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+.contact-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
+  border-color: var(--green);
+}
+.contact-card-icon {
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--green-dark), var(--green));
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  margin: 0 auto 15px;
+}
+.contact-card-label {
+  font-size: 13px; color: var(--text-muted);
+  margin-bottom: 4px;
+}
+.contact-card-value {
+  font-size: 16px; font-weight: 700;
+  color: var(--text);
+}
+
+@media (max-width: 768px) {
+  .float-btns { right: 10px; gap: 8px; }
+  .float-btn { width: 44px; height: 44px; font-size: 18px; }
+  .contact-grid { grid-template-columns: 1fr; }
+  .contact-section { padding: 25px 20px; }
+  .notice-box { padding: 25px 20px 30px; }
+}
+
+/* PC页脚 */
+.pc-footer {
+  background: var(--green-dark); color: var(--white);
+  padding: 50px 40px 20px;
+}
+.pc-footer-inner {
+  max-width: 1400px; margin: 0 auto;
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px;
+}
+.pc-footer h4 { font-size: 16px; margin-bottom: 15px; }
+.pc-footer p, .pc-footer a { font-size: 13px; color: rgba(255,255,255,0.7); line-height: 2; }
+.pc-footer a:hover { color: var(--gold-light); }
+.pc-footer-bottom {
+  max-width: 1400px; margin: 30px auto 0;
+  padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1);
+  text-align: center; font-size: 13px; color: rgba(255,255,255,0.5);
+}
+
+/* ========== 侧边浮动客服按钮 ========== */
+.float-btns {
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 999;
+}
+.float-btn {
+  width: 64px; height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--green-dark), var(--green));
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(11,122,62,0.4);
+  transition: all 0.3s;
+  text-decoration: none;
+  position: relative;
+}
+.float-btn:hover {
+  transform: scale(1.12);
+  box-shadow: 0 8px 28px rgba(11,122,62,0.6);
+}
+.float-btn.gold {
+  background: linear-gradient(135deg, var(--gold), #e8b923);
+  color: var(--green-dark);
+}
+.float-btn.gold:hover {
+  box-shadow: 0 6px 20px rgba(201,162,39,0.5);
+}
+.float-tooltip {
+  position: absolute;
+  right: 76px;
+  background: var(--text);
+  color: var(--white);
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 14px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+}
+.float-btn:hover .float-tooltip { opacity: 1; }
+@media (max-width: 768px) {
+  .float-btns { right: 10px; }
+  .float-btn { width: 52px; height: 52px; font-size: 18px; }
+  .float-tooltip { font-size: 12px; padding: 6px 10px; right: 62px; }
+}
+
+/* ========== H5移动端适配 ========== */
+@media (max-width: 768px) {
+  .pc-nav { padding: 0 15px; }
+  .pc-nav-inner { height: 56px; }
+  .pc-logo h1 { font-size: 16px; }
+  .pc-menu { display: none; }
+  .pc-hero { padding: 50px 20px 40px; }
+  .pc-hero-inner { grid-template-columns: 1fr; gap: 30px; text-align: center; }
+  .pc-hero-content { display: flex; flex-direction: column; align-items: center; }
+  .pc-hero-content h2 { font-size: 30px; }
+  .pc-hero-content p { font-size: 14px; max-width: 100%; }
+  .pc-countdown { justify-content: center; }
+  .pc-hero-btns { flex-direction: column; align-items: center; }
+  .pc-hero-btns a { width: 100%; max-width: 280px; text-align: center; }
+  .pc-countdown { gap: 10px; justify-content: center; }
+  .cd-box { padding: 10px 14px; min-width: 65px; }
+  .cd-num { font-size: 24px; }
+  .pc-hero-btns { flex-direction: column; }
+  .pc-hero-btns a { text-align: center; justify-content: center; }
+  .pc-section { padding: 40px 20px; }
+  .pc-section-title { font-size: 22px; }
+  .pc-section-title::before { height: 22px; }
+  .pc-section-sub { font-size: 14px; }
+  .history-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .history-img { height: 90px; }
+  .team-grid { grid-template-columns: repeat(4, 1fr); gap: 10px; }
+  .team-card { padding: 12px 4px; }
+  .team-flag { font-size: 28px; }
+  .team-name { font-size: 12px; }
+  .schedule-wrap { padding: 20px; }
+  .schedule-tabs { gap: 6px; }
+  .s-tab { padding: 5px 12px; font-size: 12px; }
+  .s-item { flex-wrap: nowrap; gap: 6px; padding: 8px 10px; align-items: center; }
+  .s-time { font-size: 10px; flex-shrink: 0; }
+  .s-match { flex: 1; order: 0; gap: 6px; min-width: 0; justify-content: center; }
+  .s-team { flex: 1; display: flex; align-items: center; justify-content: center; gap: 4px; font-size: clamp(7px, 2.2vw, 10px); min-width: 0; white-space: nowrap; }
+  .s-flag { font-size: 16px; }
+  .s-vs { font-size: 9px; padding: 2px 6px; flex-shrink: 0; }
+  .s-stage { font-size: 8px; flex-shrink: 0; max-width: 70px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .gallery-item { aspect-ratio: 16/12; }
+  .rank-table th, .rank-table td { padding: 10px 8px; font-size: 13px; }
+  .pc-footer-inner { grid-template-columns: 1fr; gap: 25px; }
+  .modal-box { padding: 25px 20px; }
+  .modal-btns a { font-size: 13px; padding: 10px 0; }
+  .pc-footer { display: none; }
+  .pc-marquee { padding: 10px 15px; }
+  .marquee-text span { font-size: 16px; }
+}
+</style>
+</head>
+<body>
+
+<!-- PC导航 -->
+<nav class="pc-nav">
+  <div class="pc-nav-inner">
+    <div class="pc-logo">
+      <div class="ball"><img src="./img/t.png" alt="头像"></div>
+      <div>
+        <h1>2026 FIFA世界杯</h1>
+        <span>美加墨 · 足球盛宴</span>
+      </div>
+    </div>
+    <div class="pc-menu">
+      <a href="#history">历史</a>
+      <a href="#teams">32强</a>
+      <a href="#schedule">赛程</a>
+      <a href="#gallery">精彩瞬间</a>
+      <a href="#rank">射手榜</a>
+      <a href="qywx_temp.html">企业微信</a>
+    </div>
+  </div>
+</nav>
+
+<!-- PC英雄区块 -->
+<section class="pc-hero">
+  <div class="pc-hero-inner">
+    <div class="pc-hero-content">
+      <h2>2026 <span>美加墨</span><br>世界杯盛宴</h2>
+      <p>全球48支球队竞逐荣耀，首次由三国联合举办。见证绿茵传奇，共享足球狂欢。</p>
+      <p>皇冠正网 雷速统一赔率<br>首充送10-15% 每周固定福利 诚招代理</p>
+      <div class="pc-countdown">
+        <div class="cd-box"><div class="cd-num" id="cd-d">--</div><div class="cd-label">天</div></div>
+        <div class="cd-box"><div class="cd-num" id="cd-h">--</div><div class="cd-label">时</div></div>
+        <div class="cd-box"><div class="cd-num" id="cd-m">--</div><div class="cd-label">分</div></div>
+        <div class="cd-box"><div class="cd-num" id="cd-s">--</div><div class="cd-label">秒</div></div>
+      </div>
+      <div class="pc-hero-btns">
+        <a class="pc-btn-main" href="javascript:void(0)" onclick="openModal()">📅皇冠会员线路</a>
+        <a class="pc-btn-sec" href="https://tawk.to/chat/6a1bfcc2e9ac851c2fa947ca/1jpul6m7e">🏆 联系在线客服</a>
+      </div>
+    </div>
+    <div class="pc-hero-img" style="text-align:center;">
+      <img src="./img/4.jpg" alt="世界杯奖杯" style="max-width:420px;width:100%;filter:drop-shadow(0 20px 40px rgba(0,0,0,0.3));">
+      <div style="color:rgba(255,255,255,0.6);font-size:16px;margin-top:10px;">FIFA World Cup 26™</div>
+    </div>
+  </div>
+</section>
+
+<!-- 单个联系方式弹窗（漂浮按钮用） -->
+<div class="notice-overlay" id="floatModal">
+  <div class="notice-box">
+    <span class="notice-close" onclick="closeFloatNotice()">&times;</span>
+    <h3 id="floatTitle">联系我们</h3>
+    <p id="floatSub">如有问题请通过以下方式联系</p>
+    <div class="notice-contact-list">
+      <div class="notice-contact-item" id="floatItem" onclick="floatGo()">
+        <div class="notice-icon" id="floatIcon" style="padding:0;background:transparent;"><img id="floatIconImg" src="./img/tg.jpg" style="width:40px;height:40px;border-radius:50%;object-fit:cover;"></div>
+        <div class="notice-info">
+          <div class="label" id="floatLabel">在线客服</div>
+          <div class="value" id="floatValue">点击咨询</div>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:18px;">
+      <a href="#" id="floatLink" target="_blank" class="pc-btn-main" style="display:inline-block;padding:10px 28px;font-size:14px;">立即跳转</a>
+    </div>
+  </div>
+</div>
+
+<!-- 公告弹窗（每日一次） -->
+<div class="notice-overlay" id="noticeModal">
+  <div class="notice-box">
+    <span class="notice-close" onclick="closeNotice()">&times;</span>
+    <h3>📢 联系我们</h3>
+    <p>如有任何问题，欢迎通过以下方式联系</p>
+    <div class="notice-contact-list">
+      <a href="https://13t.cn" target="_blank" style="text-decoration:none;">
+        <div class="notice-contact-item">
+          <div class="notice-icon" style="padding:0;background:transparent;width:64px;height:64px;"><img src="./img/3t.png" style="width:64px;height:64px;border-radius:50%;object-fit:cover;"></div>
+          <div class="notice-info">
+            <div class="label" style="font-size:16px;">三条</div>
+            <div class="value" style="font-size:22px;color:var(--green-dark);font-weight:800;">HGyl6449</div>
+             <div class="value" style="font-size:22px;color:var(--green-dark);font-weight:800;">HGyl4312</div>
+                         <div class="value" style="font-size:22px;color:var(--green-dark);font-weight:800;">XYGJ373</div>
+             <div class="value" style="font-size:22px;color:var(--green-dark);font-weight:800;">HGyl0973</div>
+                         <div class="value" style="font-size:22px;color:var(--green-dark);font-weight:800;">HGyl5591</div>
+             <div class="value" style="font-size:22px;color:var(--green-dark);font-weight:800;">HGyl6907</div>
+          </div>
+        </div>
+      </a>
+    </div>
+     <div class="notice-contact-list">
+      <a href="qywx_temp.html" target="_blank" style="text-decoration:none;">
+        <div class="notice-contact-item">
+          <div class="notice-icon" style="padding:0;background:transparent;width:64px;height:64px;"><img src="./img/2a33227e485644ec9c723710b4847416.png" style="width:64px;height:64px;border-radius:50%;object-fit:cover;"></div>
+          <div class="notice-info">
+            <div class="label" style="font-size:16px;">企业微信</div>
+            <div class="value" style="font-size:22px;color:var(--green-dark);font-weight:800;">点击后选择客服</div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- PC滚动公告 -->
+<div class="pc-marquee">
+  <div class="pc-marquee-inner">
+    <span class="marquee-label">最新快讯</span>
+    <div class="marquee-text"><span>
+      🏴󠁧󠁢󠁥󠁮󠁧󠁿 英格兰公布26人大名单 · 🇦🇷 梅西确认出征美加墨 · 🇧🇷 巴西队集结备战 · 🇩🇪 德国队热身赛大胜 · 🇫🇷 姆巴佩领衔法国锋线 · 🇪🇸 西班牙青年军蓄势待发 · 🏆 世界杯门票已售出超过300万张
+    </span></div>
+  </div>
+</div>
+
+<!-- PC历史回顾 -->
+<section id="history">
+  <div class="pc-section">
+    <h2 class="pc-section-title">世界杯历史回顾</h2>
+    <p class="pc-section-sub">近四届世界杯冠军，见证足球王国的荣耀时刻</p>
+    <div class="pc-history">
+      <div class="history-grid">
+        <div class="history-card">
+          <img class="history-img" src="https://images.unsplash.com/photo-1551958219-acbc608c6377?w=400&q=80" alt="2010世界杯">
+          <div class="history-year">2010 · 南非</div>
+          <div class="history-winner">🇪🇸</div>
+          <div class="history-host">西班牙</div>
+          <div class="history-name">首次登顶世界杯</div>
+        </div>
+        <div class="history-card">
+          <img class="history-img" src="./img/2.jpg" alt="2014世界杯">
+          <div class="history-year">2014 · 巴西</div>
+          <div class="history-winner">🇩🇪</div>
+          <div class="history-host">德国</div>
+          <div class="history-name">日耳曼战车第四冠</div>
+        </div>
+        <div class="history-card">
+          <img class="history-img" src="./img/3.jpg" alt="2018世界杯">
+          <div class="history-year">2018 · 俄罗斯</div>
+          <div class="history-winner">🇫🇷</div>
+          <div class="history-host">法国</div>
+          <div class="history-name">高卢雄鸡二度捧杯</div>
+        </div>
+        <div class="history-card">
+          <img class="history-img" src="./img/1.jpg" alt="2022世界杯">
+          <div class="history-year">2022 · 卡塔尔</div>
+          <div class="history-winner">🇦🇷</div>
+          <div class="history-host">阿根廷</div>
+          <div class="history-name">梅西圆梦第三星</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PC32强球队 -->
+<section class="team-section" id="teams">
+  <div class="pc-section">
+    <h2 class="pc-section-title">2026世界杯32强</h2>
+    <p class="pc-section-sub">扩军至48队前的最后一届32强世界杯，传统豪强悉数在列</p>
+    <div class="team-grid">
+    <div class="team-card"><div class="team-flag">🇦🇷</div><div class="team-name">阿根廷</div></div>
+    <div class="team-card"><div class="team-flag">🇫🇷</div><div class="team-name">法国</div></div>
+    <div class="team-card"><div class="team-flag">🇧🇷</div><div class="team-name">巴西</div></div>
+    <div class="team-card"><div class="team-flag">🇩🇪</div><div class="team-name">德国</div></div>
+    <div class="team-card"><div class="team-flag">🇪🇸</div><div class="team-name">西班牙</div></div>
+    <div class="team-card"><div class="team-flag">🇵🇹</div><div class="team-name">葡萄牙</div></div>
+    <div class="team-card"><div class="team-flag">🏴󠁧󠁢󠁥󠁮󠁧󠁿</div><div class="team-name">英格兰</div></div>
+    <div class="team-card"><div class="team-flag">🇳🇱</div><div class="team-name">荷兰</div></div>
+    <div class="team-card"><div class="team-flag">🇧🇪</div><div class="team-name">比利时</div></div>
+    <div class="team-card"><div class="team-flag">🇭🇷</div><div class="team-name">克罗地亚</div></div>
+    <div class="team-card"><div class="team-flag">🇮🇹</div><div class="team-name">意大利</div></div>
+    <div class="team-card"><div class="team-flag">🇺🇾</div><div class="team-name">乌拉圭</div></div>
+    <div class="team-card"><div class="team-flag">🇨🇴</div><div class="team-name">哥伦比亚</div></div>
+    <div class="team-card"><div class="team-flag">🇲🇽</div><div class="team-name">墨西哥</div></div>
+    <div class="team-card"><div class="team-flag">🇺🇸</div><div class="team-name">美国</div></div>
+    <div class="team-card"><div class="team-flag">🇨🇦</div><div class="team-name">加拿大</div></div>
+  </div>
+  </div>
+</section>
+
+<!-- PC赛程 -->
+<section class="pc-section" id="schedule">
+  <h2 class="pc-section-title">2026世界杯赛程</h2>
+  <p class="pc-section-sub">2026年6月11日 - 7月19日，美加墨三国16座球场</p>
+  <div class="schedule-wrap">
+    <div class="schedule-tabs" id="scheduleTabs"></div>
+    <div class="schedule-list" id="scheduleList"></div>
+  </div>
+</section>
+
+<!-- 三条大横幅 -->
+<section style="background: linear-gradient(135deg, var(--green-dark), var(--green)); padding: 50px 20px; text-align: center; position: relative; overflow: hidden;">
+  <div style="position: absolute; top: -20px; right: -20px; width: 120px; height: 120px; background: rgba(201,162,39,0.15); border-radius: 50%;"></div>
+  <div style="position: absolute; bottom: -30px; left: -30px; width: 160px; height: 160px; background: rgba(201,162,39,0.1); border-radius: 50%;"></div>
+  <div style="max-width: 600px; margin: 0 auto; position: relative; z-index: 2;">
+    <div style="font-size: 18px; color: var(--gold-light); font-weight: 700; margin-bottom: 12px; letter-spacing: 2px;">官方指定联系方式</div>
+    <div style="display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap;">
+      <a href="https://13t.cn" target="_blank" style="text-decoration:none;">
+        <div style="background: var(--white); border-radius: var(--radius); padding: 25px 50px; display: flex; align-items: center; gap: 15px; box-shadow: 0 8px 30px rgba(0,0,0,0.2); transition: all 0.3s; cursor: pointer;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+          <img src="./img/3t.png" style="width:64px;height:64px;border-radius:50%;object-fit:cover;">
+          <div style="text-align: left;">
+            <div style="font-size: 13px; color: var(--text-muted); font-weight: 600;">三条</div>
+            <div style="font-size: 28px; color: var(--green-dark); font-weight: 800; letter-spacing: 2px;">HGyl6449</div>
+            <div style="font-size: 28px; color: var(--green-dark); font-weight: 800; letter-spacing: 2px;">HGyl6907</div>
+            <div style="font-size: 28px; color: var(--green-dark); font-weight: 800; letter-spacing: 2px;">HGyl4312</div>
+            <div style="font-size: 28px; color: var(--green-dark); font-weight: 800; letter-spacing: 2px;">XYGJ373</div>
+            <div style="font-size: 28px; color: var(--green-dark); font-weight: 800; letter-spacing: 2px;">HGyl0973</div>
+            <div style="font-size: 28px; color: var(--green-dark); font-weight: 800; letter-spacing: 2px;">HGyl5591</div>
+          </div>
+        </div>
+      </a>
+  
+           <div style="display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap;">
+      <a href="qywx_temp.html" target="_blank" style="text-decoration:none;">
+        <div style="background: var(--white); border-radius: var(--radius); padding: 25px 50px; display: flex; align-items: center; gap: 15px; box-shadow: 0 8px 30px rgba(0,0,0,0.2); transition: all 0.3s; cursor: pointer;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+          <img src="./img/2a33227e485644ec9c723710b4847416.png" style="width:64px;height:64px;border-radius:50%;object-fit:cover;">
+          <div style="text-align: left;">
+            <div style="font-size: 13px; color: var(--text-muted); font-weight: 600;">企业微信</div>
+            <div style="font-size: 28px; color: var(--green-dark); font-weight: 800; letter-spacing: 2px;">点击后选择客服</div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 赛程下方联系方式 -->
+<section class="pc-section" id="contact">
+  <h2 class="pc-section-title">联系我们</h2>
+  <p class="pc-section-sub">随时为您提供专业服务与支持</p>
+  <div class="contact-section">
+    <div class="contact-grid">
+      <a href="https://13t.cn" target="_blank" style="text-decoration:none;">
+        <div class="contact-card">
+          <div class="contact-card-icon" style="padding:0;background:transparent;"><img src="./img/3t.png" style="width:72px;height:72px;border-radius:50%;object-fit:cover;"></div>
+          <div class="contact-card-label">三条</div>
+            <div style="font-size: 28px; color: var(--green-dark); font-weight: 800; letter-spacing: 2px;">HGyl6449</div>
+            <div style="font-size: 28px; color: var(--green-dark); font-weight: 800; letter-spacing: 2px;">HGyl6907</div>
+            <div style="font-size: 28px; color: var(--green-dark); font-weight: 800; letter-spacing: 2px;">HGyl4312</div>
+            <div style="font-size: 28px; color: var(--green-dark); font-weight: 800; letter-spacing: 2px;">XYGJ373</div>
+            <div style="font-size: 28px; color: var(--green-dark); font-weight: 800; letter-spacing: 2px;">HGyl0973</div>
+            <div style="font-size: 28px; color: var(--green-dark); font-weight: 800; letter-spacing: 2px;">HGyl5591</div>
+        </div>
+      </a>
+      
+           
+    </div>
+  </div>
+</section>
+
+<!-- PC精彩瞬间 -->
+<section class="pc-section" id="gallery">
+  <h2 class="pc-section-title">历届精彩瞬间</h2>
+  <p class="pc-section-sub">绿茵场上的永恒记忆，每一个进球都值得被铭记</p>
+  <div class="gallery-grid">
+    <div class="gallery-item">
+      <img class="g-img" src="./img/1.jpg" alt="2022梅西夺冠">
+      <div class="gallery-overlay"><h4>2022 · 梅西世界杯首冠</h4><p>卡塔尔卢塞尔球场，点球决胜捧杯</p></div>
+    </div>
+    <div class="gallery-item">
+      <img class="g-img" src="./img/3.jpg" alt="2018法国夺冠">
+      <div class="gallery-overlay"><h4>2018 · 法国青春风暴</h4><p>莫斯科卢日尼基球场4:2击败克罗地亚</p></div>
+    </div>
+    <div class="gallery-item">
+      <img class="g-img" src="./img/2.jpg" alt="2014德国夺冠">
+      <div class="gallery-overlay"><h4>2014 · 格策绝杀</h4><p>马拉卡纳球场，德国1:0阿根廷封王</p></div>
+    </div>
+    <div class="gallery-item">
+      <img class="g-img" src="https://images.unsplash.com/photo-1551958219-acbc608c6377?w=800&q=80" alt="2010西班牙夺冠">
+      <div class="gallery-overlay"><h4>2010 · 伊涅斯塔绝杀</h4><p>足球城球场，西班牙首夺世界杯冠军</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PC射手榜 -->
+<section id="rank">
+  <div class="pc-section">
+    <h2 class="pc-section-title">历史射手榜 TOP10</h2>
+    <p class="pc-section-sub">世界杯历史进球最多的传奇射手</p>
+    <div style="background:var(--white);border-radius:var(--radius);padding:30px;box-shadow:var(--shadow);">
+    <table class="rank-table">
+      <tr><th>排名</th><th>球员</th><th>国家</th><th>进球</th><th>参赛届数</th></tr>
+      <tr><td><div class="rank-num gold">1</div></td><td><strong>克洛泽</strong></td><td>🇩🇪 德国</td><td><strong style="color:var(--green);">16</strong></td><td>4届 (2002-2014)</td></tr>
+      <tr><td><div class="rank-num silver">2</div></td><td><strong>罗纳尔多</strong></td><td>🇧🇷 巴西</td><td><strong style="color:var(--green);">15</strong></td><td>4届 (1998-2006)</td></tr>
+      <tr><td><div class="rank-num bronze">3</div></td><td><strong>穆勒</strong></td><td>🇩🇪 德国</td><td><strong style="color:var(--green);">14</strong></td><td>2届 (1970-1974)</td></tr>
+      <tr><td><div class="rank-num normal">4</div></td><td><strong>方丹</strong></td><td>🇫🇷 法国</td><td><strong>13</strong></td><td>1届 (1958)</td></tr>
+      <tr><td><div class="rank-num normal">5</div></td><td><strong>梅西</strong></td><td>🇦🇷 阿根廷</td><td><strong>13</strong></td><td>5届 (2006-2022)</td></tr>
+      <tr><td><div class="rank-num normal">6</div></td><td><strong>姆巴佩</strong></td><td>🇫🇷 法国</td><td><strong>12</strong></td><td>2届 (2018-2022)</td></tr>
+      <tr><td><div class="rank-num normal">7</div></td><td><strong>贝利</strong></td><td>🇧🇷 巴西</td><td><strong>12</strong></td><td>4届 (1958-1970)</td></tr>
+      <tr><td><div class="rank-num normal">8</div></td><td><strong>科奇什</strong></td><td>🇭🇺 匈牙利</td><td><strong>11</strong></td><td>1届 (1954)</td></tr>
+      <tr><td><div class="rank-num normal">9</div></td><td><strong>克林斯曼</strong></td><td>🇩🇪 德国</td><td><strong>11</strong></td><td>3届 (1990-1998)</td></tr>
+      <tr><td><div class="rank-num normal">10</div></td><td><strong>拉恩</strong></td><td>🇩🇪 德国</td><td><strong>10</strong></td><td>2届 (1954-1958)</td></tr>
+    </table>
+    </div>
+  </div>
+</section>
+
+<!-- 右侧漂浮按钮 -->
+<div class="float-btns">
+  <div class="float-btn gold" onclick="openFloatNotice('三条','./img/3t.png','HGyl6449','https://13t.cn')" style="width:72px;height:72px;">
+    <span class="float-tooltip">三条</span>
+    <img src="./img/3t.png" style="width:36px;height:36px;border-radius:50%;object-fit:cover;">
+  </div>
+  <div class="float-btn" onclick="window.location.href='qywx_temp.html'" style="width:64px;height:64px;">
+    <span class="float-tooltip">企业微信</span>
+    <img src="./img/2a33227e485644ec9c723710b4847416.png" style="width:36px;height:36px;border-radius:50%;object-fit:cover;">
+  </div>
+</div>
+
+<!-- PC页脚 -->
+<footer class="pc-footer">
+  <div class="pc-footer-inner">
+    <div>
+      <h4>⚽ 2026 FIFA世界杯</h4>
+      <p>美加墨联合举办，48支球队竞逐荣耀<br>全球16座球场，64场精彩对决</p>
+    </div>
+    <div>
+      <h4>快速导航</h4>
+      <p><a href="#history">历史回顾</a><br><a href="#teams">32强球队</a><br><a href="#schedule">赛程表</a><br><a href="#rank">射手榜</a></p>
+    </div>
+    <div>
+      <h4>关于</h4>
+      <p><a href="#">赛事规则</a><br><a href="#">球场介绍</a><br><a href="#">吉祥物</a><br><a href="#">官方商城</a></p>
+    </div>
+    <div>
+      <h4>关注我们</h4>
+      <p>Facebook · Twitter<br>Instagram · YouTube<br>微博 · 抖音</p>
+    </div>
+    <div>
+      <h4>联系客服</h4>
+      <p><a href="qywx_temp.html" style="display:inline-block;background:var(--gold);color:var(--green-dark);padding:8px 16px;border-radius:6px;font-weight:700;margin-top:4px;">企业微信</a></p>
+    </div>
+  </div>
+  <div class="pc-footer-bottom">© 2026 FIFA World Cup™ · 本页面为模拟展示，非官方网站</div>
+</footer>
+
+<script>
+// 弹窗
+function openModal() { document.getElementById('modal').classList.add('active'); }
+function closeModal(e) {
+  if (!e || e.target.id === 'modal') document.getElementById('modal').classList.remove('active');
+}
+
+// 公告弹窗（每日一次）
+function openNotice() { document.getElementById('noticeModal').classList.add('active'); }
+function closeNotice() { document.getElementById('noticeModal').classList.remove('active'); }
+
+// 每日只弹一次
+function checkDailyNotice() {
+  var today = new Date().toISOString().slice(0, 10);
+  var lastShown = localStorage.getItem('wc_notice_date');
+  if (lastShown !== today) {
+    setTimeout(openNotice, 800);
+    localStorage.setItem('wc_notice_date', today);
+  }
+}
+window.addEventListener('load', checkDailyNotice);
+
+// 漂浮按钮弹窗
+var _floatLink = '';
+function openFloatNotice(title, iconImg, value, link) {
+  document.getElementById('floatTitle').textContent = title;
+  document.getElementById('floatSub').textContent = '点击卡片或下方按钮进行操作';
+  document.getElementById('floatIconImg').src = iconImg;
+  document.getElementById('floatLabel').textContent = title;
+  document.getElementById('floatValue').textContent = value;
+  _floatLink = link;
+  document.getElementById('floatLink').href = link;
+  document.getElementById('floatModal').classList.add('active');
+}
+function closeFloatNotice() {
+  document.getElementById('floatModal').classList.remove('active');
+}
+function floatGo() {
+  if (_floatLink) window.open(_floatLink, '_blank');
+}
+
+// 倒计时
+function updateCountdown() {
+  const target = new Date('2026-06-11T06:00:00').getTime();
+  const now = new Date().getTime();
+  const diff = target - now;
+  if (diff > 0) {
+    const d = Math.floor(diff / (1000*60*60*24));
+    const h = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
+    const m = Math.floor((diff % (1000*60*60)) / (1000*60));
+    const s = Math.floor((diff % (1000*60)) / 1000);
+    const els = { 'cd-d': d, 'cd-h': h, 'cd-m': m, 'cd-s': s };
+    for (let id in els) {
+      const el = document.getElementById(id);
+      if (el) el.textContent = String(els[id]).padStart(2, '0');
+    }
+  }
+}
+setInterval(updateCountdown, 1000);
+updateCountdown();
+
+// 赛程数据（2026年6月12日 - 6月28日 小组赛）
+const scheduleData = {
+  '6月12日': [
+    { time:'03:00', t1:'🇲🇽 墨西哥', t2:'🇿🇦 南非', stage:'A组第1轮 · 墨西哥城（揭幕战）' },
+    { time:'10:00', t1:'🇰🇷 韩国', t2:'🇨🇿 捷克', stage:'A组第1轮 · 瓜达拉哈拉' },
+  ],
+  '6月13日': [
+    { time:'03:00', t1:'🇨🇦 加拿大', t2:'🇧🇦 波黑', stage:'B组第1轮 · 多伦多' },
+    { time:'09:00', t1:'🇺🇸 美国', t2:'🇵🇾 巴拉圭', stage:'D组第1轮 · 洛杉矶' },
+  ],
+  '6月14日': [
+    { time:'03:00', t1:'🇶🇦 卡塔尔', t2:'🇨🇭 瑞士', stage:'B组第1轮 · 旧金山' },
+    { time:'06:00', t1:'🇧🇷 巴西', t2:'🇲🇦 摩洛哥', stage:'C组第1轮 · 迈阿密' },
+    { time:'09:00', t1:'🇭🇹 海地', t2:'🏴󠁧󠁢󠁳󠁣󠁴󠁿 苏格兰', stage:'C组第1轮 · 波士顿' },
+    { time:'12:00', t1:'🇦🇺 澳大利亚', t2:'🇹🇷 土耳其', stage:'D组第1轮 · 温哥华' },
+  ],
+  '6月15日': [
+    { time:'01:00', t1:'🇩🇪 德国', t2:'🇨🇼 库拉索', stage:'E组第1轮 · 休斯敦' },
+    { time:'04:00', t1:'🇳🇱 荷兰', t2:'🇯🇵 日本', stage:'F组第1轮 · 达拉斯' },
+    { time:'07:00', t1:'🇨🇮 科特迪瓦', t2:'🇪🇨 厄瓜多尔', stage:'E组第1轮 · 费城' },
+    { time:'10:00', t1:'🇸🇪 瑞典', t2:'🇹🇳 突尼斯', stage:'F组第1轮 · 蒙特雷' },
+  ],
+  '6月16日': [
+    { time:'00:00', t1:'🇪🇸 西班牙', t2:'🇨🇻 佛得角', stage:'H组第1轮 · 休斯敦' },
+    { time:'03:00', t1:'🇧🇪 比利时', t2:'🇪🇬 埃及', stage:'G组第1轮 · 西雅图' },
+    { time:'06:00', t1:'🇸🇦 沙特', t2:'🇺🇾 乌拉圭', stage:'H组第1轮 · 瓜达拉哈拉' },
+    { time:'09:00', t1:'🇮🇷 伊朗', t2:'🇳🇿 新西兰', stage:'G组第1轮 · 洛杉矶' },
+  ],
+  '6月17日': [
+    { time:'03:00', t1:'🇫🇷 法国', t2:'🇸🇳 塞内加尔', stage:'I组第1轮 · 纽约' },
+    { time:'06:00', t1:'🇮🇶 伊拉克', t2:'🇳🇴 挪威', stage:'I组第1轮 · 波士顿' },
+    { time:'09:00', t1:'🇦🇷 阿根廷', t2:'🇩🇿 阿尔及利亚', stage:'J组第1轮 · 堪萨斯城' },
+    { time:'12:00', t1:'🇦🇹 奥地利', t2:'🇯🇴 约旦', stage:'J组第1轮 · 达拉斯' },
+  ],
+  '6月18日': [
+    { time:'01:00', t1:'🇵🇹 葡萄牙', t2:'🇨🇩 刚果（金）', stage:'K组第1轮 · 迈阿密' },
+    { time:'04:00', t1:'🏴󠁧󠁢󠁥󠁮󠁧󠁿 英格兰', t2:'🇭🇷 克罗地亚', stage:'L组第1轮 · 休斯敦' },
+    { time:'07:00', t1:'🇬🇭 加纳', t2:'🇵🇦 巴拿马', stage:'L组第1轮 · 费城' },
+    { time:'10:00', t1:'🇺🇿 乌兹别克斯坦', t2:'🇨🇴 哥伦比亚', stage:'K组第1轮 · 亚特兰大' },
+  ],
+  '6月19日': [
+    { time:'00:00', t1:'🇨🇿 捷克', t2:'🇿🇦 南非', stage:'A组第2轮 · 瓜达拉哈拉' },
+    { time:'03:00', t1:'🇨🇭 瑞士', t2:'🇧🇦 波黑', stage:'B组第2轮 · 多伦多' },
+    { time:'06:00', t1:'🇨🇦 加拿大', t2:'🇶🇦 卡塔尔', stage:'B组第2轮 · 温哥华' },
+    { time:'09:00', t1:'🇲🇽 墨西哥', t2:'🇰🇷 韩国', stage:'A组第2轮 · 墨西哥城' },
+  ],
+  '6月20日': [
+    { time:'03:00', t1:'🇺🇸 美国', t2:'🇦🇺 澳大利亚', stage:'D组第2轮 · 洛杉矶' },
+    { time:'06:00', t1:'🏴󠁧󠁢󠁳󠁣󠁴󠁿 苏格兰', t2:'🇲🇦 摩洛哥', stage:'C组第2轮 · 波士顿' },
+    { time:'08:30', t1:'🇧🇷 巴西', t2:'🇭🇹 海地', stage:'C组第2轮 · 费城' },
+    { time:'11:00', t1:'🇹🇷 土耳其', t2:'🇵🇾 巴拉圭', stage:'D组第2轮 · 旧金山' },
+  ],
+  '6月21日': [
+    { time:'01:00', t1:'🇳🇱 荷兰', t2:'🇸🇪 瑞典', stage:'F组第2轮 · 达拉斯' },
+    { time:'04:00', t1:'🇩🇪 德国', t2:'🇨🇮 科特迪瓦', stage:'E组第2轮 · 休斯敦' },
+    { time:'08:00', t1:'🇪🇨 厄瓜多尔', t2:'🇨🇼 库拉索', stage:'E组第2轮 · 费城' },
+    { time:'12:00', t1:'🇹🇳 突尼斯', t2:'🇯🇵 日本', stage:'F组第2轮 · 蒙特雷' },
+  ],
+  '6月22日': [
+    { time:'00:00', t1:'🇪🇸 西班牙', t2:'🇸🇦 沙特', stage:'H组第2轮 · 休斯敦' },
+    { time:'03:00', t1:'🇧🇪 比利时', t2:'🇮🇷 伊朗', stage:'G组第2轮 · 西雅图' },
+    { time:'06:00', t1:'🇺🇾 乌拉圭', t2:'🇨🇻 佛得角', stage:'H组第2轮 · 瓜达拉哈拉' },
+    { time:'09:00', t1:'🇳🇿 新西兰', t2:'🇪🇬 埃及', stage:'G组第2轮 · 洛杉矶' },
+  ],
+  '6月23日': [
+    { time:'01:00', t1:'🇦🇷 阿根廷', t2:'🇦🇹 奥地利', stage:'J组第2轮 · 堪萨斯城' },
+    { time:'05:00', t1:'🇫🇷 法国', t2:'🇮🇶 伊拉克', stage:'I组第2轮 · 纽约' },
+    { time:'08:00', t1:'🇳🇴 挪威', t2:'🇸🇳 塞内加尔', stage:'I组第2轮 · 波士顿' },
+    { time:'11:00', t1:'🇯🇴 约旦', t2:'🇩🇿 阿尔及利亚', stage:'J组第2轮 · 达拉斯' },
+  ],
+  '6月24日': [
+    { time:'01:00', t1:'🇵🇹 葡萄牙', t2:'🇺🇿 乌兹别克斯坦', stage:'K组第2轮 · 迈阿密' },
+    { time:'04:00', t1:'🏴󠁧󠁢󠁥󠁮󠁧󠁿 英格兰', t2:'🇬🇭 加纳', stage:'L组第2轮 · 休斯敦' },
+    { time:'07:00', t1:'🇵🇦 巴拿马', t2:'🇭🇷 克罗地亚', stage:'L组第2轮 · 费城' },
+    { time:'10:00', t1:'🇨🇴 哥伦比亚', t2:'🇨🇩 刚果（金）', stage:'K组第2轮 · 亚特兰大' },
+  ],
+  '6月25日': [
+    { time:'03:00', t1:'🇨🇭 瑞士', t2:'🇨🇦 加拿大', stage:'B组第3轮 · 西雅图' },
+    { time:'03:00', t1:'🇧🇦 波黑', t2:'🇶🇦 卡塔尔', stage:'B组第3轮 · 温哥华' },
+    { time:'06:00', t1:'🇲🇦 摩洛哥', t2:'🇭🇹 海地', stage:'C组第3轮 · 亚特兰大' },
+    { time:'06:00', t1:'🏴󠁧󠁢󠁳󠁣󠁴󠁿 苏格兰', t2:'🇧🇷 巴西', stage:'C组第3轮 · 迈阿密' },
+    { time:'09:00', t1:'🇿🇦 南非', t2:'🇰🇷 韩国', stage:'A组第3轮 · 蒙特雷' },
+    { time:'09:00', t1:'🇨🇿 捷克', t2:'🇲🇽 墨西哥', stage:'A组第3轮 · 墨西哥城' },
+  ],
+  '6月26日': [
+    { time:'04:00', t1:'🇨🇼 库拉索', t2:'🇨🇮 科特迪瓦', stage:'E组第3轮 · 费城' },
+    { time:'04:00', t1:'🇪🇨 厄瓜多尔', t2:'🇩🇪 德国', stage:'E组第3轮 · 休斯敦' },
+    { time:'07:00', t1:'🇹🇳 突尼斯', t2:'🇳🇱 荷兰', stage:'F组第3轮 · 蒙特雷' },
+    { time:'07:00', t1:'🇯🇵 日本', t2:'🇸🇪 瑞典', stage:'F组第3轮 · 达拉斯' },
+    { time:'10:00', t1:'🇹🇷 土耳其', t2:'🇺🇸 美国', stage:'D组第3轮 · 洛杉矶' },
+    { time:'10:00', t1:'🇵🇾 巴拉圭', t2:'🇦🇺 澳大利亚', stage:'D组第3轮 · 温哥华' },
+  ],
+  '6月27日': [
+    { time:'03:00', t1:'🇳🇴 挪威', t2:'🇫🇷 法国', stage:'I组第3轮 · 纽约' },
+    { time:'03:00', t1:'🇸🇳 塞内加尔', t2:'🇮🇶 伊拉克', stage:'I组第3轮 · 波士顿' },
+    { time:'08:00', t1:'🇨🇻 佛得角', t2:'🇸🇦 沙特', stage:'H组第3轮 · 瓜达拉哈拉' },
+    { time:'08:00', t1:'🇺🇾 乌拉圭', t2:'🇪🇸 西班牙', stage:'H组第3轮 · 休斯敦' },
+    { time:'11:00', t1:'🇳🇿 新西兰', t2:'🇧🇪 比利时', stage:'G组第3轮 · 洛杉矶' },
+    { time:'11:00', t1:'🇪🇬 埃及', t2:'🇮🇷 伊朗', stage:'G组第3轮 · 西雅图' },
+  ],
+  '6月28日': [
+    { time:'05:00', t1:'🇵🇦 巴拿马', t2:'🏴󠁧󠁢󠁥󠁮󠁧󠁿 英格兰', stage:'L组第3轮 · 费城' },
+    { time:'05:00', t1:'🇭🇷 克罗地亚', t2:'🇬🇭 加纳', stage:'L组第3轮 · 休斯敦' },
+    { time:'07:30', t1:'🇨🇴 哥伦比亚', t2:'🇵🇹 葡萄牙', stage:'K组第3轮 · 达拉斯' },
+    { time:'07:30', t1:'🇨🇩 刚果（金）', t2:'🇺🇿 乌兹别克斯坦', stage:'K组第3轮 · 迈阿密' },
+    { time:'10:00', t1:'🇩🇿 阿尔及利亚', t2:'🇦🇹 奥地利', stage:'J组第3轮 · 达拉斯' },
+    { time:'10:00', t1:'🇯🇴 约旦', t2:'🇦🇷 阿根廷', stage:'J组第3轮 · 堪萨斯城' },
+  ],
+};
+let currentDate = '6月12日';
+
+function renderTabs() {
+  const tabsEl = document.getElementById('scheduleTabs');
+  const dates = Object.keys(scheduleData);
+  tabsEl.innerHTML = dates.map(d =>
+    `<button class="s-tab ${d === currentDate ? 'active' : ''}" data-date="${d}">${d}</button>`
+  ).join('');
+  tabsEl.querySelectorAll('.s-tab').forEach(btn => {
+    btn.addEventListener('click', function() {
+      currentDate = this.dataset.date;
+      renderTabs();
+      renderList();
+    });
+  });
+}
+
+function renderList() {
+  const listEl = document.getElementById('scheduleList');
+  const matches = scheduleData[currentDate] || [];
+  listEl.innerHTML = matches.map(m => `
+    <div class="s-item">
+      <div class="s-time">${m.time}</div>
+      <div class="s-match">
+        <div class="s-team">${m.t1}</div>
+        <span class="s-vs">VS</span>
+        <div class="s-team">${m.t2}</div>
+      </div>
+      <div class="s-stage">${m.stage}</div>
+    </div>
+  `).join('');
+}
+
+renderTabs();
+renderList();
+</script>
+
+<!-- 弹窗 -->
+<div class="modal-overlay" id="modal" onclick="closeModal(event)">
+  <div class="modal-box">
+    <h3>🎫皇冠盘口</h3>
+    <p>会员线路如下</p>
+    <div class="modal-btns">
+      <a href="https://hga030.com" target="_blank">会员盘口线路一</a>
+      <a href="https://hga050.com" target="_blank">会员盘口线路二</a>
+      <a href="https://hga035.com/" target="_blank">会员盘口线路三</a>
+      <a href="https://mos100.com/" target="_blank">会员盘口线路四</a>
+      <a href="https://mos055.com/" target="_blank">会员盘口线路五</a>
+      <a href="https://hga038.com/" target="_blank">会员盘口线路六</a>
+      <a href="https://hga027.com/" target="_blank">会员盘口线路七</a>
+      <a href="https://www.mos022.com/" target="_blank">会员盘口线路八</a>
+    </div>
+    <button class="modal-close" onclick="closeModal()">✕ 关闭</button>
+  </div>
+</div>
+
+<!-- ߸ͷť -->
+
+</div>
+
+</body>
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6a1bfcc2e9ac851c2fa947ca/1jpul6m7e';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+</html>

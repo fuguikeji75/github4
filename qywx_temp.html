@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>客服</title>
+<style>
+/* 基础重置与全局样式 */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: "Segoe UI", "Roboto", sans-serif; }
+/* 页面容器：优先纯色背景+叠加渐变，确保不显示白色 */
+body {
+  min-height: 100vh; width: 100%;
+  background-color: #121212;
+  background-image: linear-gradient(135deg, #121212 0%, #666666 100%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex; justify-content: center; align-items: center;
+  padding: 20px; overflow: hidden; position: relative;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+/* 主容器：层级最高，确保内容可见 */
+.main-container {
+  width: 100%; max-width: 400px; position: relative; z-index: 10;
+  animation: fadeIn 1s ease-out;
+}
+/* 提示文字 */
+.prompt-text {
+  color: #e0e0e0; text-align: center; margin-bottom: 40px;
+  padding: 20px; background: rgba(30, 30, 30, 0.7);
+  border-radius: 10px; line-height: 1.8;
+  font-size: 22px; font-weight: 600;
+}
+/* 按钮容器 */
+.button-container { display: flex; flex-direction: column; gap: 18px; }
+/* 按钮样式：适配黑灰色主题 */
+.action-button {
+  padding: 18px 24px; background: rgba(30, 30, 30, 0.8);
+  border: none; border-radius: 12px;
+  font-size: 18px; font-weight: 500; color: #e0e0e0;
+  text-align: center; text-decoration: none;
+  cursor: pointer; transition: all 0.3s ease;
+  position: relative; overflow: hidden; backdrop-filter: blur(5px);
+}
+/* 按钮发光效果 */
+.action-button::before {
+  content: ''; position: absolute; top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(150, 150, 150, 0.2), transparent);
+  transition: all 0.5s ease;
+}
+/* 按钮底部光效 */
+.action-button::after {
+  content: ''; position: absolute; bottom: 0; left: 0;
+  width: 100%; height: 2px; transform: scaleX(0);
+  transition: transform 0.3s ease; transform-origin: bottom center;
+}
+/* 按钮交互效果 */
+.action-button:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.5);
+}
+.action-button:hover::before { left: 100%; }
+.action-button:hover::after { transform: scaleX(1); }
+.action-button:active {
+  transform: translateY(-2px) scale(1);
+  box-shadow: 0 8px 15px -5px rgba(0, 0, 0, 0.5);
+}
+/* 按钮特色光效 */
+.button-1::after { background: #38bdf8; }
+.button-1:hover { color: #38bdf8; }
+.button-2::after { background: #8b5cf6; }
+.button-2:hover { color: #8b5cf6; }
+.button-3::after { background: #10b981; }
+.button-3:hover { color: #10b981; }
+.button-4::after { background: #f59e0b; }
+.button-4:hover { color: #f59e0b; }
+.button-5::after { background: #ef4444; }
+.button-5:hover { color: #ef4444; }
+.button-6::after { background: #ec4899; }
+.button-6:hover { color: #ec4899; }
+.button-7::after { background: #06b6d4; }
+.button-7:hover { color: #06b6d4; }
+/* 按钮延迟动画 */
+.action-button {
+  opacity: 0;
+  animation: fadeIn 0.6s ease-out forwards;
+}
+.button-1 { animation-delay: 0.1s; }
+.button-2 { animation-delay: 0.2s; }
+.button-3 { animation-delay: 0.3s; }
+.button-4 { animation-delay: 0.4s; }
+.button-5 { animation-delay: 0.5s; }
+.button-6 { animation-delay: 0.6s; }
+.button-7 { animation-delay: 0.7s; }
+/* 响应式调整 */
+@media (max-width: 480px) {
+  .prompt-text { font-size: 18px; margin-bottom: 30px; padding: 15px; }
+  .action-button { padding: 16px 20px; font-size: 17px; }
+}
+
+/* ===== 图片弹窗 ===== */
+.img-overlay {
+  display: none;
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.9);
+  z-index: 200;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+.img-overlay.active { display: flex; }
+.img-box {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+}
+.img-box img {
+  max-width: 100%;
+  max-height: 85vh;
+  border-radius: 8px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+}
+.img-close {
+  position: absolute;
+  top: -40px; right: 0;
+  color: #fff;
+  font-size: 30px;
+  cursor: pointer;
+  line-height: 1;
+}
+.img-title {
+  position: absolute;
+  bottom: -40px; left: 0; right: 0;
+  color: #fff;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+}
+.back-link {
+  display: block;
+  text-align: center;
+  margin-top: 30px;
+  color: #999;
+  font-size: 14px;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.back-link:hover { color: #e0e0e0; }
+</style>
+</head>
+<body>
+<!-- 主容器 -->
+<div class="main-container">
+  <div class="prompt-text">
+    请正确选择您要联系的客服！<br>
+  </div>
+  <div class="button-container">
+    <button class="action-button button-1" onclick="openImg(0)">
+      企业微信客服一
+    </button>
+    <button class="action-button button-2" onclick="openImg(1)">
+      企业微信客服二
+    </button>
+    <button class="action-button button-3" onclick="openImg(2)">
+      企业微信客服三
+    </button>
+    <button class="action-button button-4" onclick="openImg(3)">
+      企业微信客服四
+    </button>
+    <button class="action-button button-5" onclick="openImg(4)">
+      企业微信客服五
+    </button>
+    <button class="action-button button-6" onclick="openImg(5)">
+      企业微信客服六
+    </button>
+    <button class="action-button button-7" onclick="openImg(6)">
+      企业微信客服七
+    </button>
+  </div>
+  <a href="index.html" class="back-link">← 返回首页</a>
+</div>
+
+<!-- 图片弹窗 -->
+<div class="img-overlay" id="imgModal" onclick="closeImg(event)">
+  <div class="img-box">
+    <span class="img-close" onclick="closeImg()">&times;</span>
+    <img id="modalImg" src="" alt="">
+    <div class="img-title" id="imgTitle"></div>
+  </div>
+</div>
+
+<!-- 动态生成星星 -->
+<script>
+const images = [
+  { src: './img/q1.jpeg', title: '企业微信客服一' },
+  { src: './img/q2.jpeg', title: '企业微信客服二' },
+  { src: './img/q3.jpeg', title: '企业微信客服三' },
+  { src: './img/q4.jpeg', title: '企业微信客服四' },
+  { src: './img/q5.jpeg', title: '企业微信客服五' },
+  { src: './img/q6.jpeg', title: '企业微信客服六' },
+  { src: './img/q7.jpeg', title: '企业微信客服七' }
+];
+function openImg(idx) {
+  document.getElementById('modalImg').src = images[idx].src;
+  document.getElementById('imgTitle').textContent = images[idx].title;
+  document.getElementById('imgModal').classList.add('active');
+}
+function closeImg(e) {
+  if (!e || e.target.id === 'imgModal') {
+    document.getElementById('imgModal').classList.remove('active');
+  }
+}
+</script>
+</body>
+</html>
