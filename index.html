@@ -803,12 +803,7 @@ img { max-width: 100%; display: block; }
           <div class="notice-icon" style="padding:0;background:transparent;width:64px;height:64px;"><img src="./img/3t.png" style="width:64px;height:64px;border-radius:50%;object-fit:cover;"></div>
           <div class="notice-info">
             <div class="label" style="font-size:16px;">三条</div>
-            <div class="value" style="font-size:22px;color:var(--green-dark);font-weight:800;">HGyl6449</div>
-             <div class="value" style="font-size:22px;color:var(--green-dark);font-weight:800;">HGyl4312</div>
-                         <div class="value" style="font-size:22px;color:var(--green-dark);font-weight:800;">XYGJ373</div>
-             <div class="value" style="font-size:22px;color:var(--green-dark);font-weight:800;">HGyl0973</div>
-                         <div class="value" style="font-size:22px;color:var(--green-dark);font-weight:800;">HGyl5591</div>
-             <div class="value" style="font-size:22px;color:var(--green-dark);font-weight:800;">HGyl6907</div>
+            <div class="value" style="font-size:22px;color:var(--green-dark);font-weight:800;"><span class="rand-text">待定</span></div>
           </div>
         </div>
       </a>
@@ -925,16 +920,10 @@ img { max-width: 100%; display: block; }
           <img src="./img/3t.png" style="width:64px;height:64px;border-radius:50%;object-fit:cover;">
           <div style="text-align: left;">
             <div style="font-size: 13px; color: var(--text-muted); font-weight: 600;">三条</div>
-            <div style="font-size: 28px; color: var(--green-dark); font-weight: 800; letter-spacing: 2px;">HGyl6449</div>
-            <div style="font-size: 28px; color: var(--green-dark); font-weight: 800; letter-spacing: 2px;">HGyl6907</div>
-            <div style="font-size: 28px; color: var(--green-dark); font-weight: 800; letter-spacing: 2px;">HGyl4312</div>
-            <div style="font-size: 28px; color: var(--green-dark); font-weight: 800; letter-spacing: 2px;">XYGJ373</div>
-            <div style="font-size: 28px; color: var(--green-dark); font-weight: 800; letter-spacing: 2px;">HGyl0973</div>
-            <div style="font-size: 28px; color: var(--green-dark); font-weight: 800; letter-spacing: 2px;">HGyl5591</div>
+            <div style="font-size: 28px; color: var(--green-dark); font-weight: 800; letter-spacing: 2px;"><span class="rand-text">待定</span></div>
           </div>
         </div>
       </a>
-  
            <div style="display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap;">
       <a href="qywx_temp.html" target="_blank" style="text-decoration:none;">
         <div style="background: var(--white); border-radius: var(--radius); padding: 25px 50px; display: flex; align-items: center; gap: 15px; box-shadow: 0 8px 30px rgba(0,0,0,0.2); transition: all 0.3s; cursor: pointer;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
@@ -959,12 +948,7 @@ img { max-width: 100%; display: block; }
         <div class="contact-card">
           <div class="contact-card-icon" style="padding:0;background:transparent;"><img src="./img/3t.png" style="width:72px;height:72px;border-radius:50%;object-fit:cover;"></div>
           <div class="contact-card-label">三条</div>
-            <div style="font-size: 28px; color: var(--green-dark); font-weight: 800; letter-spacing: 2px;">HGyl6449</div>
-            <div style="font-size: 28px; color: var(--green-dark); font-weight: 800; letter-spacing: 2px;">HGyl6907</div>
-            <div style="font-size: 28px; color: var(--green-dark); font-weight: 800; letter-spacing: 2px;">HGyl4312</div>
-            <div style="font-size: 28px; color: var(--green-dark); font-weight: 800; letter-spacing: 2px;">XYGJ373</div>
-            <div style="font-size: 28px; color: var(--green-dark); font-weight: 800; letter-spacing: 2px;">HGyl0973</div>
-            <div style="font-size: 28px; color: var(--green-dark); font-weight: 800; letter-spacing: 2px;">HGyl5591</div>
+          <div class="contact-card-value"><span class="rand-text">待定</span></div>
         </div>
       </a>
       
@@ -1022,7 +1006,7 @@ img { max-width: 100%; display: block; }
 
 <!-- 右侧漂浮按钮 -->
 <div class="float-btns">
-  <div class="float-btn gold" onclick="openFloatNotice('三条','./img/3t.png','HGyl6449','https://13t.cn')" style="width:72px;height:72px;">
+  <div class="float-btn gold" onclick="openFloatNotice('三条','./img/3t.png',(window.randText||'待定'),'https://13t.cn')" style="width:72px;height:72px;">
     <span class="float-tooltip">三条</span>
     <img src="./img/3t.png" style="width:36px;height:36px;border-radius:50%;object-fit:cover;">
   </div>
@@ -1274,21 +1258,36 @@ renderList();
     <div class="modal-btns">
       <a href="https://hga030.com" target="_blank">会员盘口线路一</a>
       <a href="https://hga050.com" target="_blank">会员盘口线路二</a>
-      <a href="https://hga035.com/" target="_blank">会员盘口线路三</a>
-      <a href="https://mos100.com/" target="_blank">会员盘口线路四</a>
-      <a href="https://mos055.com/" target="_blank">会员盘口线路五</a>
-      <a href="https://hga038.com/" target="_blank">会员盘口线路六</a>
-      <a href="https://hga027.com/" target="_blank">会员盘口线路七</a>
-      <a href="https://www.mos022.com/" target="_blank">会员盘口线路八</a>
+      <a href="https://hga030.com" target="_blank">会员盘口线路三</a>
+      <a href="https://hga050.com" target="_blank">会员盘口线路四</a>
+      <a href="https://hga030.com" target="_blank">会员盘口线路五</a>
+      <a href="https://hga050.com" target="_blank">会员盘口线路六</a>
+      <a href="https://ag.hga050.com" target="_blank">会员盘口线路七</a>
+      <a href="https://ag.hga030.com" target="_blank">会员盘口线路八</a>
     </div>
     <button class="modal-close" onclick="closeModal()">✕ 关闭</button>
   </div>
 </div>
 
 <!-- ߸ͷť -->
-
+<div class="float-btns">
+  <a href="qywx_temp.html" title="ϵͷ">
+    <span class="float-tooltip">企业微信</span>
+    💬
+  </div>
 </div>
 
+
+<script>
+// 随机显示6条文本之一，所有位置统一显示
+(function() {
+  var options = ['HGyl6449','HGyl4312','XYGJ373','HGyl0973','HGyl5591','HGyl6907'];
+  window.randText = options[Math.floor(Math.random() * options.length)];
+  document.querySelectorAll('.rand-text').forEach(function(el) {
+    el.textContent = window.randText;
+  });
+})();
+</script>
 </body>
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
