@@ -167,6 +167,9 @@ body {
     <button class="action-button button-3" onclick="openImg(2)">
       企业微信客服三
     </button>
+        <button class="action-button button-4" onclick="openImg(3)">
+      企业微信客服四
+    </button>
 
   </div>
   <a href="index.html" class="back-link">← 返回首页</a>
@@ -186,7 +189,8 @@ body {
 const images = [
   { src: './img/w1.jpeg', title: '企业微信客服一' },
   { src: './img/w2.jpeg', title: '企业微信客服二' },
-  { src: './img/w3.jpeg', title: '企业微信客服七' }
+  { src: './img/w3.jpeg', title: '企业微信客服三' },
+  { src: './img/w4.jpeg', title: '企业微信客服四' }
 ];
 function openImg(idx) {
   document.getElementById('modalImg').src = images[idx].src;
